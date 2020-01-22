@@ -1,0 +1,13 @@
+{
+    "environmentStatus": {
+        "canceled": "Environment is in canceled state.",
+        "inProgress": "Environment is in progress state.",
+        "notStarted": "Environment is in not started state.",
+        "partiallySucceeded": "Environment is in partially succeeded state.",
+        "queued": "Environment is in queued state.",
+        "rejected": "Environment is in rejected state.",
+        "scheduled": "Environment is in scheduled state.",
+        "succeeded": "Environment is in succeeded state.",
+        "undefined": "Environment status not set."
+    }
+}

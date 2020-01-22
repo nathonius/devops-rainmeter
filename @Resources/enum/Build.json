@@ -1,0 +1,18 @@
+{
+    "result": {
+        "canceled": "The build was canceled before starting.",
+        "failed": "The build completed unsuccessfully.",
+        "none": "No result",
+        "partiallySucceeded": "The build completed compilation successfully but had other errors.",
+        "succeeded": "The build completed successfully."
+    },
+    "status": {
+        "all": "All status.",
+        "canceling": "The build is cancelling",
+        "completed": "The build has completed.",
+        "inProgress": "The build is currently in progress.",
+        "none": "No status.",
+        "notStarted": "The build has not yet started.",
+        "postponed": "The build is inactive in the queue."
+    }
+}

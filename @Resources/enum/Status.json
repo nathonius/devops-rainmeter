@@ -1,0 +1,6 @@
+{
+    "none": 0,
+    "working": 1,
+    "good": 2,
+    "bad": 3
+}

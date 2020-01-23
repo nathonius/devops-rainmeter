@@ -106,7 +106,7 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Exec Command="$(ILMergeConsolePath) /zeroPeKind /out:$(OutDir)DevOps.dll $(OutDir)DevOps.dll $(OutDir)Newtonsoft.Json.dll" />
+    <Exec Command="$(ILMergeConsolePath) /zeroPeKind /out:$(OutDir)DevOpsPlugin.dll $(OutDir)DevOps.dll $(OutDir)Newtonsoft.Json.dll" />
     <Exec Command="$(SolutionDir)\API\DllExporter.exe $(ConfigurationName) $(PlatformName) $(TargetDir)\ $(TargetFileName)" />
   </Target>
   <PropertyGroup>

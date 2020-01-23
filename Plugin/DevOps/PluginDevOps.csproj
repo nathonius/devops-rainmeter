@@ -83,6 +83,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\API\RainmeterAPI.cs">
+      <Link>RainmeterAPI.cs</Link>
+    </Compile>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Models\BuildStatusResponse.cs" />
@@ -90,7 +93,6 @@
     <Compile Include="Models\ReleaseListResponse.cs" />
     <Compile Include="Models\ReleaseResponse.cs" />
     <Compile Include="PluginDevOps.cs" />
-    <Compile Include="RainmeterAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

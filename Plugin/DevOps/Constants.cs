@@ -48,7 +48,7 @@
             public const string ReleaseServer = "vsrm.dev.azure.com";
             public const string ProfileServer = "vssps.dev.azure.com";
             public const string ApiVersion = "5.1";
-            public const double UpdateRate = 600;
+            public const double UpdateRate = 60;
         }
         public static class BuildStatuses
         {

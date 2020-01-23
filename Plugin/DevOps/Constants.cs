@@ -7,12 +7,14 @@
             public const string PullRequest = "PullRequest";
             public const string Build = "Build";
             public const string Release = "Release";
+            public const string UserId = "UserId";
         }
         public static class Variables
         {
             public const string AccessToken = "#DevOpsAccessToken#";
             public const string CoreServer = "#DevOpsCoreServer#";
             public const string ReleaseServer = "#DevOpsReleaseServer#";
+            public const string ProfileServer = "#DevOpsProfileServer#";
             public const string Organization = "#DevOpsOrganization#";
             public const string Project = "#DevOpsProject#";
             public const string Repository = "#DevOpsRespository#";
@@ -29,6 +31,7 @@
             public const string AccessToken = "AccessToken";
             public const string CoreServer = "CoreServer";
             public const string ReleaseServer = "ReleaseServer";
+            public const string ProfileServer = "ProfileServer";
             public const string Organization = "Organization";
             public const string Project = "Project";
             public const string Repository = "Respository";
@@ -43,6 +46,7 @@
         {
             public const string CoreServer = "dev.azure.com";
             public const string ReleaseServer = "vsrm.dev.azure.com";
+            public const string ProfileServer = "vssps.dev.azure.com";
             public const string ApiVersion = "5.1";
             public const double UpdateRate = 600;
         }

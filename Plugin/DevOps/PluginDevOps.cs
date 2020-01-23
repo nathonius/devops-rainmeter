@@ -23,6 +23,7 @@ namespace PluginDevOps
         private string AccessToken { get; set; }
         private string CoreServer { get; set; }
         private string ReleaseServer { get; set; }
+        private string ProfileServer { get; set; }
         private string Organization { get; set; }
         private string Project { get; set; }
         private string Repository { get; set; }
@@ -61,13 +62,17 @@ namespace PluginDevOps
                 {
                     result = GetReleaseStatus();
                 }
+                else if (MeasureType.Equals(Constants.MeasureType.UserId, StringComparison.OrdinalIgnoreCase))
+                {
+                    result = GetUserId();
+                }
                 else
                 {
                     result = string.Empty;
                 }
                 _updateCount = 0;
             }
-            else
+            else if (!MeasureType.Equals(Constants.MeasureType.UserId, StringComparison.OrdinalIgnoreCase))
             {
                 _updateCount++;
             }
@@ -108,6 +113,11 @@ namespace PluginDevOps
                 ReleaseServer = GetConfigValue(Constants.Variables.ReleaseServer, Constants.Options.ReleaseServer, defaultValue: Constants.Defaults.ReleaseServer, errorOnEmpty: true);
                 ReleaseDefinition = GetConfigValue(Constants.Variables.ReleaseDefinition, Constants.Options.ReleaseDefinition, errorOnEmpty: true);
                 ReleaseEnvironment = GetConfigValue(Constants.Variables.ReleaseEnvironment, Constants.Options.ReleaseEnvironment);
+            }
+            // User ID Configuration
+            else if (MeasureType.Equals(Constants.MeasureType.UserId, StringComparison.OrdinalIgnoreCase))
+            {
+                ProfileServer = GetConfigValue(Constants.Variables.ProfileServer, Constants.Options.ProfileServer, defaultValue: Constants.Defaults.ProfileServer, errorOnEmpty: true);
             }
         }
 
@@ -215,6 +225,28 @@ namespace PluginDevOps
                 }
             }
             return status;
+        }
+
+        public string GetUserId()
+        {
+            string userId = "";
+
+            // Create request
+            var request = PrepareRequest($"https://{ProfileServer}/{Organization}/_apis/profile/profiles/me?api-version={ApiVersion}");
+
+            // Get response
+            var response = (HttpWebResponse)request.GetResponse();
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream);
+                    string responseJson = reader.ReadToEnd();
+                    var userIdResponse = JsonConvert.DeserializeObject<UserIdResponse>(responseJson);
+                    userId = userIdResponse.UserId;
+                }
+            }
+            return userId;
         }
 
         /// <summary>

@@ -90,7 +90,7 @@
     <Compile Include="Models\ReleaseListResponse.cs" />
     <Compile Include="Models\ReleaseResponse.cs" />
     <Compile Include="PluginDevOps.cs" />
-    <Compile Include="$(SolutionDir)..\API\RainmeterAPI.cs" />
+    <Compile Include="RainmeterAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
